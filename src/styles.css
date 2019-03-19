@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+/* 
+color pallets 
+https: //coolors.co/011627-f71735-41ead4-fdfffc-ff9f1c
+
+https: //coolors.co/0c120c-c20114-6d7275-c7d6d5-ecebf3
+
+https: //coolors.co/0d1b2a-1b263b-415a77-778da9-e0e1dd
+
+https: //coolors.co/011627-fdfffc-2ec4b6-e71d36-ff9f1c
+
+https: //coolors.co/0b132b-1c2541-3a506b-5bc0be-ffffff
+
+*/
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}

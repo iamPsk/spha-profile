@@ -1,0 +1,247 @@
+/* .............main content........... */
+
+#main-content {
+  height: 100vmin;
+  background: url('../../../assets/images/ai-artificial-intelligence-code-34676.jpg') no-repeat center;
+  background-size: cover;
+  width: 100%;
+  position: relative;
+}
+
+/* ..........main layout........... */
+#main-layout {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* .........Header................... */
+#header {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+/*............Nav-bar..................*/
+#nav-bar {
+  display: flex;
+  background: #ffffff73;
+  color: #000;
+  position: fixed;
+  top: 0;
+  box-shadow: 0px 2px 5px 0px #0000009a;
+  width: 100%;
+}
+
+#dd-nav {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+#dd-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+}
+
+#dd-nav ul li {
+  padding: 16px 8px;
+}
+
+#dd-nav ul li:last-child {
+  position: absolute;
+  right: 0px;
+  padding: 16px;
+}
+
+#dd-nav a,
+#nav-header a {
+  color: rgb(0, 0, 0);
+  font-weight: 300;
+  padding: 16px 8px;
+  text-decoration: none;
+}
+
+#nav-header {
+  flex-grow: 0.1;
+  padding: 11px 8px 8px 5px;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+li:hover,
+#nav-header:not(.active) a:hover {
+  background-color: #ee3d3d;
+}
+
+#nav-header button {
+  display: none;
+}
+
+.active {
+  background: #00000067;
+}
+
+.active a {
+  color: rgb(255, 255, 255);
+}
+
+/*......... introduction .......*/
+.intro {
+  color: #fff;
+  margin-top: 2em;
+  align-self: center;
+  width: 75%;
+  background: rgba(0, 0, 0, 0.459);
+  padding: 1em;
+  border-radius: 3px;
+  box-shadow: 0px 2px 5px 0px #00000080,
+    0px 2px 5px 0px #000000;
+}
+
+.intro h5 {
+  padding: 8px;
+  font-size: 2em;
+  font-weight: 300;
+  text-align: center;
+}
+
+#main-intro {
+  display: flex;
+  height: 65px;
+  position: relative;
+  align-items: baseline;
+  overflow: hidden;
+}
+
+#main-intro h2 {
+  font-size: 32px;
+  padding: 8px 0;
+  flex-shrink: 0;
+}
+
+#intro-cats {
+  position: absolute;
+  left: 76px;
+  font-size: 32px;
+  transition: position 30s ease;
+  animation: 20s infinite ease slideup;
+}
+
+#intro-cats h3 {
+  padding: 8px;
+}
+
+button {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 3em;
+  bottom: 10px;
+  width: 80px;
+  height: 80px;
+  color: rgba(255, 255, 255, 0.603);
+  background: rgba(0, 0, 0, 0.699);
+  border-radius: 50%
+}
+
+@keyframes slideup {
+  from {
+    top: -7.5%;
+  }
+
+  16.6% {
+    top: -7.5%;
+  }
+
+  33.2% {
+    top: -110%;
+  }
+
+  49.8% {
+    top: -211%;
+  }
+
+  64.4% {
+    top: -314%;
+  }
+
+  83% {
+    top: -415%;
+  }
+
+  100% {
+    top: -516%;
+  }
+}
+
+
+/* .........media query Nav ...........*/
+
+/* ..........Mobile phones 455px........ */
+@media(max-width:500px) {
+  .active {
+    background: none;
+  }
+
+  #nav-bar {
+    flex-direction: column;
+  }
+
+  #nav-header {
+    padding: .1em;
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 16px;
+  }
+
+  #nav-header a {
+    padding: 0;
+    font-size: 20px;
+  }
+
+  #dd-nav {
+    flex-direction: column;
+    flex-basis: 100%;
+  }
+
+  #nav-header a:hover {
+    border-bottom: 1px solid rgb(255, 255, 255);
+    padding-bottom: 4px;
+    background: none;
+  }
+
+  #nav-header button {
+    display: initial;
+    color: #000000;
+    border: none;
+    border-radius: 2px;
+    background: rgba(43, 59, 45, 0.774);
+  }
+
+  #nav-header button:hover {
+    background: rgba(29, 34, 30, 0.836);
+  }
+
+  #dd-nav ul {
+    flex-basis: 100%;
+    position: initial;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #dd-nav ul li:last-child {
+    position: initial;
+    padding: 16px 8px;
+  }
+
+  .intro {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.726);
+  }
+}

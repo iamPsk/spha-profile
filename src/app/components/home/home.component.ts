@@ -11,5 +11,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  toggleNav() {
+    const ddNav = document.getElementById('dd-nav').style;
+    ddNav.display === 'none' ?
+      ddNav.display = 'flex' :
+      ddNav.display = 'none'
+  }
 }
