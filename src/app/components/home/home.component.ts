@@ -11,6 +11,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  // tooggle navbar state
   toggleNav() {
     const ddNav = document.getElementById('dd-nav').style;
     ddNav.display === 'none' ?
