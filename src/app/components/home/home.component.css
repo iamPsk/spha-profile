@@ -49,7 +49,7 @@
 
 #dd-nav ul li {
   padding: 16px 8px;
-  transition: background-color 200ms ease-in, 200ms color ease;
+  transition: background-color 200ms ease, 200ms color ease;
 }
 
 #dd-nav ul li:last-child {
@@ -128,10 +128,10 @@ li:hover,
 
 #intro-cats {
   position: absolute;
-  left: 76px;
+  left: 85px;
   font-size: 32px;
   transition: position 30s ease;
-  animation: 20s infinite ease slideup;
+  animation: 13s infinite ease slideup;
 }
 
 #intro-cats h3 {
@@ -168,22 +168,22 @@ li:hover,
     top: -7.5%;
   }
   16.6% {
-    top: -7.5%;
-  }
-  33.2% {
     top: -110%;
   }
-  49.8% {
+  33.2% {
     top: -211%;
   }
-  64.4% {
+  49.8% {
     top: -314%;
   }
-  83% {
+  64.4% {
     top: -415%;
   }
-  100% {
+  83% {
     top: -516%;
+  }
+  100% {
+    top: -7.5%;
   }
 }
 
