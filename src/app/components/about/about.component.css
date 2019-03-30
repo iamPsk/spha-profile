@@ -149,6 +149,7 @@ img{
 .fe {
   width: 100%;
   overflow-y: auto;
+  overflow-x: hidden;
   text-align: center;
   height: 80%;
   color: rgb(226, 226, 226);
