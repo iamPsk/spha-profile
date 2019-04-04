@@ -7,7 +7,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  @Output() pTop: EventEmitter<any> = new EventEmitter;
+  @Output() isContact: EventEmitter<boolean> = new EventEmitter;
+
 
   constructor() { }
 
@@ -22,12 +23,8 @@ export class HomeComponent implements OnInit {
       ddNav.display = 'none'
   }
 
-  // get ptop position
-  pageLoc() {
-    console.log('clicking');
-    // console.log(this.pTop);
-    // document.body.style.backgroundColor = '#000000'
-    this.pTop.emit((window.scrollY).toString());
-    document.body.style.overflowY =  'hidden'
+  // init contact state
+  contactMe() {
+    this.isContact.emit(true);
   }
 }

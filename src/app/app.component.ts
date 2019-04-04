@@ -7,12 +7,26 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  pTop: number
+  isContact: boolean = false;
+  top: number;
+  bodyStyle = document.body.style
 
-  ptop(e) {
-    this.pTop = Number(e);
-    console.log('ptop vent init');
-    console.log(this.pTop);
+  contactMe(e) {
+    // set contact state to either true or false
+    this.isContact = e;
+
+    // isContact ? set contact state : remove contact state
+    if (e) {
+
+      this.top = window.scrollY; 
+      this.bodyStyle.overflow = 'hidden'
+
+    } else {
+
+      this.top = undefined;
+      this.bodyStyle.overflow = 'auto'
+      
+    }
+
   }
-  
 }

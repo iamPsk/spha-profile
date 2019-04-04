@@ -1,3 +1,10 @@
-<app-home (pTop)="ptop($event)"></app-home>
+<app-home (isContact)='contactMe($event)'></app-home>
+
 <app-about></app-about>
-<app-contact [pTop]="pTop"></app-contact>
+
+<app-contact 
+ [hidden]='!isContact'
+ [top]='top' 
+ (isContact)='contactMe($event)'
+ >
+</app-contact>
