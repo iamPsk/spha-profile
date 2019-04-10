@@ -1,10 +1,47 @@
+<!-- Top -->
 <app-home (isContact)='contactMe($event)'></app-home>
 
+<!-- About Component -->
 <app-about></app-about>
 
+<!-- Contact Component -->
 <app-contact 
  [hidden]='!isContact'
  [top]='top' 
  (isContact)='contactMe($event)'
  >
 </app-contact>
+
+<!-- footer -->
+<footer>
+
+  <nav>
+    <!-- footer nav-links -->
+    <div id="anchors">
+      <a href="#main-content">Home</a>
+      <a href="#bt-sec">About</a>
+      <a href="#skills">Skills</a>
+    </div>
+
+    <!-- contact links icons  -->
+    <div id="contactMe">
+
+      <h4>Contact me</h4>
+
+      <div id="icons">
+        <a ><i title="LinkedIn" class="fa fa-linkedin"></i></a>  
+        <a href="#" (click)="emailMe()"><i title="Gmail" class="fa fa-envelope"></i></a>  
+        <a href="https://www.github.com/iamPsk" target="_blank"><i title="Github" class="fa fa-github"></i></a>
+      </div>
+
+    </div>
+
+  </nav>
+
+  <p> &copy; 1999. All rights reserved | Designed by <a href="#">Siphamandla</a></p>
+
+  <!-- to top page -->
+  <button (click)="takeMeHome()" >V</button>
+
+</footer>
+<div id="end"></div>

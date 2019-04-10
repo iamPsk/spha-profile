@@ -8,7 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   
   isContact: boolean = false;
+
+  // windo.scrollY
   top: number;
+
+  // for overflow
   bodyStyle = document.body.style
 
   contactMe(e) {
@@ -17,16 +21,25 @@ export class AppComponent {
 
     // isContact ? set contact state : remove contact state
     if (e) {
-
       this.top = window.scrollY; 
       this.bodyStyle.overflow = 'hidden'
-
+      console.log(this.top);
     } else {
-
       this.top = undefined;
       this.bodyStyle.overflow = 'auto'
-      
     }
 
+  }
+
+  // Contate state init
+  emailMe() {
+    this.isContact = !this.isContact;
+    this.top = 0;
+    this.bodyStyle.overflow = 'hidden'
+  }
+
+  // scroll tobtop page
+  takeMeHome() {
+    window.scrollTo(0, 0);
   }
 }

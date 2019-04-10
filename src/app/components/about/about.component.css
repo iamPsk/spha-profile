@@ -92,15 +92,18 @@ img{
 
 /* ............skills........ */
 #skills{
-  padding: 1em;
-  height: 90vh;
-  /* border: 2px solid #000; */
+  margin-top: 1em;
+  padding: 0 16px;
+  height: 610px;
   display: flex;
   color: #fff;
   flex-direction: column;
   background: url('../../../assets/images/keyboard_backlight_red_136083_3840x2160.jpg') no-repeat fixed;
   background-size: cover;
-  margin-bottom: 1em;
+}
+
+#mySkills{
+  padding: 8px;
 }
 
 /*..skill center layout..*/
@@ -108,16 +111,15 @@ img{
   display: flex;
   align-self: center;
   width: 100%;
-  height: 80%;
+  height: 78%;
   align-self: center;
-  padding: 1em;
 }
 
 /*..... skills heading........*/
 #skills h3{
+  margin-top: .5em;
   padding: 16px;
   font-size: 2em;
-  margin-bottom: 1em;
 }
 
 #skills h3 span{
@@ -130,13 +132,14 @@ img{
 
 /*..single skill div..*/
 .skill {
+  border-radius: 4px;
   text-transform: uppercase;
   margin: 0.2em;
   font-weight: bold;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background: #03030391;
+  background: #c0c0c021;
 }
 
 .skill-header {
@@ -159,7 +162,7 @@ img{
 .progress {
   position: relative;
   border-bottom: 1px solid #a0050580;
-  padding: 8px 8px 10px;
+  padding: 16px 8px 8px;
   width: 60%;
   margin: auto;
 }
@@ -202,7 +205,7 @@ img{
 
 /*..CSS.. */
 #left:hover .fe p:nth-child(2)::after {
-  width: 75%;
+  width: 70%;
 }
 
 /*..HTML5..*/
@@ -212,12 +215,12 @@ img{
 
 /*..JQUERY..*/
 #left:hover .fe p:nth-child(4)::after {
-  width: 40%;
+  width: 50%;
 }
 
 /*..ANGULAR..*/
 #left:hover .fe p:nth-child(5)::after {
-  width: 60%;
+  width: 65%;
 }
 
 /*..METOER..*/
@@ -229,7 +232,6 @@ img{
 #left:hover .fe p:nth-child(7)::after {
   width: 50%;
 }
-
 
 /* .........MD SKILLS LS........ */
 #middle{
@@ -266,23 +268,23 @@ img{
 
 /*..FRONT END..*/
 #middle div:first-child:hover .fe p:first-child::after {
-  width: 56%;
+  width: 59%;
 }
 
 /*..BACK END..*/
 #middle div:first-child:hover .fe p:nth-child(2)::after {
-  width: 75%;
+  width: 50%;
 }
 
 /*..GIT..*/
 #middle div:first-child:hover .fe p:nth-child(3)::after {
-  width: 40%;
+  width: 51%;
   opacity: 1;
 }
 
 /*..SAURCE CONTROL..LOL..*/
 #middle div:first-child:hover .fe p:nth-child(4)::after {
-  width: 20%;
+  width: 40%;
 }
 
 /*....md skills 2nd child....*/
@@ -307,12 +309,12 @@ img{
 
 /*..PHP..*/
 #middle div:nth-child(2):hover .fe p:first-child::after {
-  width: 56%;
+  width: 60%;
 }
 
 /*..PYTHON..*/
 #middle div:nth-child(2):hover .fe p:nth-child(2)::after {
-  width: 75%;
+  width: 78%;
 }
 
 /*..NODE..*/
@@ -323,7 +325,7 @@ img{
 
 /*..RUBY..*/
 #middle div:nth-child(2):hover .fe p:nth-child(4)::after {
-  width: 20%;
+  width: 48%;
 }
 
 
@@ -368,7 +370,7 @@ img{
 
 /*..MYSQL..*/
 #right div:first-child:hover .fe p:nth-child(2)::after {
-  width: 75%;
+  width: 70%;
 }
 
 /*..POSTGRES..*/
@@ -379,7 +381,7 @@ img{
 
 /*..SQLITE..*/
 #right div:first-child:hover .fe p:nth-child(4)::after {
-  width: 20%;
+  width: 77%;
 }
 
 /*..MONGO..*/
@@ -491,9 +493,9 @@ img{
   width: 50%;
 }
 
-/*..seo..*/
+/*..HTTP..*/
 #right div:nth-child(2) div:nth-child(2):hover .fe p:nth-child(5)::after {
-  width: 35%;
+  width: 45%;
 }
 
 /*..curl..*/
@@ -502,7 +504,7 @@ img{
 }
 
 .skill:hover{
-  background: rgb(0, 0, 0);
+  background: rgba(36, 36, 36, 0.835);
 }
 
 
