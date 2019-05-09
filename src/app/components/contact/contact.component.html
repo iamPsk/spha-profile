@@ -1,0 +1,83 @@
+<section (click)="closer($event,form)" [style.top.px]="top" id="contact">
+  <div id="contactMe">
+    <h3>new message <span (click)="close(form)">&times;</span></h3>
+    <form #form="ngForm" (ngSubmit)="send(form)" action="#">
+      {{email.errors | json}}
+      {{email.valid}}
+      
+      <!-- EMAIL -->
+      <div class="input-group">
+
+        <!-- Email Validation -->
+        <div class="alert" *ngIf="email.invalid && (email.touched || email.dirty)">
+          <div *ngIf="email.errors.required">
+            <p>
+              Your email address is required.
+            </p>
+          </div>
+        </div>
+        <!-- recipients email address  -->
+        <input type="email"
+         name="email" 
+         id="email" 
+         placeholder="From"
+         required
+         [(ngModel)]="message.from"
+         #email="ngModel"
+         autofocus
+         tabindex="1"
+         pattern="/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}
+  [a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$.^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+/"
+         >
+
+      </div>
+
+      <!-- Subject -->
+      <div class="input-group">
+        <input type="text" 
+        name="subject" 
+        id="subject" 
+        placeholder="Subject"
+        [(ngModel)]="message.subject"
+        minlength="4"
+        maxlength="55"
+        autofocus
+        tabindex="2"
+        >
+      </div>
+
+      <!-- Message Validation -->
+      <div class="alert" *ngIf="msg.invalid && (msg.touched || msg.dirty)">
+        <div *ngIf="msg.errors.required">
+          <p>
+            You cannot send empty message.
+          </p>
+        </div>
+        <div *ngIf="msg.errors.minlength">
+          <p>
+            Your message is too short
+          </p>
+        </div>
+      </div>
+      <!-- Actuall message  -->
+      <textarea name="message" 
+      id="message" 
+      cols="30" 
+      rows="10" 
+      minlength="2" 
+      [(ngModel)]="message.text"
+      #msg="ngModel"
+      required
+      spellcheck="true"
+      autofocus
+      tabindex="3">
+      </textarea>
+
+      <!-- Send Message-->
+      <input type="submit" 
+      value="send" 
+      [disabled]="form.invalid ">
+      
+    </form>
+  </div>
+</section>

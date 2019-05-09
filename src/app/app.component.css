@@ -1,0 +1,99 @@
+footer{
+  background: #ee3d3d;
+  padding: 16px;
+  padding-top: 2em;
+  color: #fff;
+}
+
+nav{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em 5em;
+  justify-content: space-between;
+}
+
+/* hr after nav bar */
+nav::after{
+  content: '';
+  width: 100%;
+  border-bottom: 1px solid #000;
+  margin-top: 0.5em;
+}
+
+/* footer nav-links */
+nav #anchors{
+  display: flex;
+  flex-direction: column;
+}
+
+/* all footer anchor tags */
+#anchors a, #contactMe a{
+  text-decoration: none;
+  color: inherit;
+  padding: 8px;
+}
+
+/* footer nav-links anchor tags */
+#anchors a{
+  font-size: 1.3em;
+  font-weight: 300;
+  padding: 4px;
+}
+
+/* footer nav-links hover and icons hover */
+#anchors a:hover, i:hover {
+  color: #011627;
+}
+
+/* contact links icons */
+#contactMe{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* contact links icons a */
+#contactMe a{
+  /* padding: 8px; */
+  color: inherit;
+}
+
+/* middle icon */
+#contactMe a:nth-child(2){
+  padding: 8px 16px;
+}
+
+p,h4{
+  text-align: center;
+  padding: 16px;
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+p a{
+  color: #fff;
+  text-decoration: none;
+}
+
+#icons{
+  text-align: center;
+  font-size: 2em;
+}
+
+/* to top page button */
+button{
+  display: block;
+  margin-left: auto;
+  margin-right: .5em;
+  width: 50px;
+  height: 50px;
+  background: #011627;
+  border: 1px solid #011627;
+  border-radius: 50%;
+  color: #ee3d3d;
+  box-shadow: 0px 2px 5px rgb(48, 48, 48);
+}
+#end{
+  padding: 1px;
+  background: #011627;
+}

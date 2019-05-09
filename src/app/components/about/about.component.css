@@ -1,0 +1,726 @@
+/* .................aboout...... */
+#about{
+  color: #666;
+}
+
+h1{
+  padding: 0 1em;
+  margin-top: 1em;
+  text-align: center;
+  font-weight: 300;
+  font-size: 3.5em;
+  max-width: 100%;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+h1 span{display: block;}
+
+h1 span:first-child{
+  font-size: 24px;
+}
+
+h1 span:last-child{
+  font-size: 32px;
+}
+
+.card{
+  margin: 0 .5em 1em;
+  display: flex;
+  border-radius: 3px;
+  padding: 1em;
+  border: .5px solid #011627b9;
+}
+
+.card-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 30%;
+  padding: 1em;
+  background: #fff;
+  position: relative;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+}
+/* ........dim image........  */
+#img-holder{
+  position: absolute;
+  top: 1em;
+  bottom: 1.2em;
+  left: 1em;
+  right: 1em;
+  background: rgba(0, 0, 0, 0.418);
+}
+img{
+  align-self: stretch;
+  border-radius: 3px;
+  border: 1px solid #FF9F1C;
+  border-style: inset;
+  width: 100%;
+  max-height: 300px;
+}
+.card-header::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 70%;
+  height: 100px;
+  left: 15%;
+  z-index: -1;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+}
+.card-body{
+  flex-basis: 70%;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+.card-body p{
+  font-size: 1.8em;
+  line-height: 1.5em;
+  font-weight: 300;
+  align-self: center ;
+  text-align: center;
+  /* letter-spacing: 1px */
+}
+
+@media(max-width:600px){
+  .card{
+    flex-direction: column;
+  }
+}
+
+/* ............skills........ */
+#skills{
+  margin-top: 1em;
+  padding: 0 16px;
+  height: 610px;
+  display: flex;
+  color: #fff;
+  flex-direction: column;
+  background: url('../../../assets/images/keyboard_backlight_red_136083_3840x2160.jpg') no-repeat fixed;
+  background-size: cover;
+}
+
+#mySkills{
+  padding: 8px;
+}
+
+/*..skill center layout..*/
+#skills-center{
+  display: flex;
+  align-self: center;
+  width: 100%;
+  height: 78%;
+  align-self: center;
+}
+
+/*..... skills heading........*/
+#skills h3{
+  margin-top: .5em;
+  padding: 16px;
+  font-size: 2em;
+}
+
+#skills h3 span{
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+/*..single skill div..*/
+.skill {
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin: 0.2em;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: #c0c0c021;
+}
+
+.skill-header {
+  padding: 8px;
+  text-align: center;
+  font-size: 16px;
+}
+
+/*..progress bar stats for nerdS..*/
+.fe {
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  height: 80%;
+  color: rgb(226, 226, 226);
+  margin-bottom: 8px;
+}
+
+.progress {
+  position: relative;
+  border-bottom: 1px solid #a0050580;
+  padding: 16px 8px 8px;
+  width: 60%;
+  margin: auto;
+}
+
+.progress::after {
+  transition: width 1200ms ease-out;
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  content: '';
+  border-bottom: 1px solid rgb(68, 218, 255);
+  width: 0;
+}
+
+/*....LEFT SKILLS LS....*/
+#left{
+  flex-basis: 30%;
+  align-self: stretch;
+  transition: flex-basis 300ms ease-in;
+}
+
+#left .fe{
+  opacity: 0;
+  transition: 1s opacity;
+}
+
+/*....LEFT SIDE HOVER......*/
+#left:hover {
+  flex-basis: 50%;
+}
+
+#left:hover .fe{
+  opacity: 1;
+}
+
+/*..HTML..*/
+#left:hover .fe p:first-child::after {
+  width: 56%;
+}
+
+/*..CSS.. */
+#left:hover .fe p:nth-child(2)::after {
+  width: 70%;
+}
+
+/*..HTML5..*/
+#left:hover .fe p:nth-child(3)::after {
+  width: 40%;
+}
+
+/*..JQUERY..*/
+#left:hover .fe p:nth-child(4)::after {
+  width: 50%;
+}
+
+/*..ANGULAR..*/
+#left:hover .fe p:nth-child(5)::after {
+  width: 65%;
+}
+
+/*..METOER..*/
+#left:hover .fe p:nth-child(6)::after {
+  width: 50%;
+}
+
+/*..RUBY ON RAILS..*/
+#left:hover .fe p:nth-child(7)::after {
+  width: 50%;
+}
+
+/* .........MD SKILLS LS........ */
+#middle{
+  flex-basis: 33%;
+  display: flex;
+  flex-direction: column;
+  transition: flex-basis 500ms ease-out;
+}
+
+/* ..md skills ls hover.. */
+#middle:hover {
+  flex-basis: 60%;
+}
+
+/* ....md skills fc.. */
+#middle div:first-child {
+  transition: flex-basis 500ms ease-in;
+  flex-basis: 50%;
+}
+
+#middle div:first-child .fe {
+  opacity: 0;
+  transition: 1s opacity;
+}
+
+/*...md fc hover...*/
+#middle div:first-child:hover {
+  flex-basis: 80%;
+}
+
+#middle div:first-child:hover .fe{
+  opacity: 1;
+}
+
+/*..FRONT END..*/
+#middle div:first-child:hover .fe p:first-child::after {
+  width: 59%;
+}
+
+/*..BACK END..*/
+#middle div:first-child:hover .fe p:nth-child(2)::after {
+  width: 50%;
+}
+
+/*..GIT..*/
+#middle div:first-child:hover .fe p:nth-child(3)::after {
+  width: 51%;
+  opacity: 1;
+}
+
+/*..SAURCE CONTROL..LOL..*/
+#middle div:first-child:hover .fe p:nth-child(4)::after {
+  width: 40%;
+}
+
+/*....md skills 2nd child....*/
+#middle div:nth-child(2) {
+  flex-basis: 50%;
+  transition: flex-basis 500ms ease-in;
+}
+
+#middle div:nth-child(2) .fe {
+  opacity: 0;
+  transition: 1s opacity;
+}
+
+/*...md 2nd child hover...*/
+#middle div:nth-child(2):hover {
+  flex-basis: 80%;
+}
+
+#middle div:nth-child(2):hover .fe{
+  opacity: 1;
+}
+
+/*..PHP..*/
+#middle div:nth-child(2):hover .fe p:first-child::after {
+  width: 60%;
+}
+
+/*..PYTHON..*/
+#middle div:nth-child(2):hover .fe p:nth-child(2)::after {
+  width: 78%;
+}
+
+/*..NODE..*/
+#middle div:nth-child(2):hover .fe p:nth-child(3)::after {
+  width: 40%;
+  opacity: 1;
+}
+
+/*..RUBY..*/
+#middle div:nth-child(2):hover .fe p:nth-child(4)::after {
+  width: 48%;
+}
+
+
+/* .........RIGHT SKILLS LS........*/
+#right {
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+  transition: flex-basis 400ms ease-in;
+}
+
+/*..right skills hover ls..*/
+#right:hover {
+  flex-basis: 65%;
+}
+
+/*....right skills fc...*/
+#right div:first-child{
+  flex-basis: 50%;
+  transition: flex-basis 400ms ease-in
+}
+
+#right div:first-child .fe {
+  opacity: 0;
+  transition: 1s opacity;
+  flex-direction: column;
+}
+
+/*....right skills fc hover...*/
+#right div:first-child:hover {
+  flex-basis: 90%;
+}
+
+#right div:first-child:hover .fe {
+  opacity: 1;
+}
+
+/*..SQL..*/
+#right div:first-child:hover .fe p:first-child::after {
+  width: 56%;
+}
+
+/*..MYSQL..*/
+#right div:first-child:hover .fe p:nth-child(2)::after {
+  width: 70%;
+}
+
+/*..POSTGRES..*/
+#right div:first-child:hover .fe p:nth-child(3)::after {
+  width: 40%;
+  opacity: 1;
+}
+
+/*..SQLITE..*/
+#right div:first-child:hover .fe p:nth-child(4)::after {
+  width: 77%;
+}
+
+/*..MONGO..*/
+#right div:first-child:hover .fe p:nth-child(5)::after {
+  width: 20%;
+}
+
+
+/*....right skills 2nd child...*/
+#right div:nth-child(2){
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: row;
+  transition: flex-basis 400ms ease-in
+}
+
+/*..right skills 2nd child hover..*/
+#right div:nth-child(2):hover {
+  flex-basis: 150%;
+}
+
+/*..right skills 2nd child:fist-child.. */
+#right div:nth-child(2) div:first-child{
+  flex-basis: 50%;
+  transition: flex-basis 400ms ease-in
+}
+
+#right div:nth-child(2) div:first-child .fe {
+  opacity: 0;
+  transition: 1s opacity;
+  flex-direction: column;
+}
+
+/*..right skills 2nd child:fist-child hover.. */
+#right div:nth-child(2) div:first-child:hover {
+  flex-basis: 90%;
+}
+
+#right div:nth-child(2) div:first-child:hover .fe {
+  opacity: 1;
+}
+
+/*..ASYNC..*/
+#right div:nth-child(2) div:first-child:hover .fe p:first-child::after {
+  width: 36%;
+}
+
+/*..OOP..*/
+#right div:nth-child(2) div:first-child:hover .fe p:nth-child(2)::after {
+  width: 65%;
+}
+
+/*..REGEEX..*/
+#right div:nth-child(2) div:first-child:hover .fe p:nth-child(3)::after {
+  width: 40%;
+  opacity: 1;
+}
+
+/*..DOM..*/
+#right div:nth-child(2) div:first-child:hover .fe p:nth-child(4)::after {
+  width: 86%;
+}
+
+/*..APIS..*/
+#right div:nth-child(2) div:first-child:hover .fe p:nth-child(5)::after {
+  width: 56%;
+}
+
+/*..right skills 2nd child:2nd child.. */
+#right div:nth-child(2) div:nth-child(2) {
+  flex-direction: column;
+  flex-basis: 50%;
+  transition: flex-basis 400ms ease-in
+}
+
+#right div:nth-child(2) div:nth-child(2) .fe {
+  opacity: 0;
+  transition: 1s opacity;
+  flex-direction: column;
+}
+
+/*..right skills 2nd child:2nd child hover.. */
+#right div:nth-child(2) div:nth-child(2):hover{
+  flex-basis: 70%;
+}
+
+#right div:nth-child(2) div:nth-child(2):hover .fe {
+  opacity: 1;
+}
+
+/*..WORD..*/
+#right div:nth-child(2) div:nth-child(2):hover .fe p:first-child::after {
+  width: 50%;
+}
+
+/*..EXCEL..*/
+#right div:nth-child(2) div:nth-child(2):hover .fe p:nth-child(2)::after {
+  width: 35%;
+}
+
+/*..SEO..*/
+#right div:nth-child(2) div:nth-child(2):hover .fe p:nth-child(3)::after {
+  width: 30%;
+  opacity: 1;
+}
+
+/*..dynamic..*/
+#right div:nth-child(2) div:nth-child(2):hover .fe p:nth-child(4)::after {
+  width: 50%;
+}
+
+/*..HTTP..*/
+#right div:nth-child(2) div:nth-child(2):hover .fe p:nth-child(5)::after {
+  width: 45%;
+}
+
+/*..curl..*/
+#right div:nth-child(2) div:nth-child(2):hover .fe p:nth-child(6)::after {
+  width: 10%;
+}
+
+.skill:hover{
+  background: rgba(36, 36, 36, 0.835);
+}
+
+
+
+/*....MEDIA QUERIES  */
+@media(max-width:768px){
+  #skills {
+    height: auto;
+    color: #fff;
+  }
+
+  /*..skill center layout..*/
+  #skills-center {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  /*..single skill div..*/
+  .skill {
+    height: 150px;
+  }
+  
+  #left,
+  #middle,
+  #middle div:first-child,
+  #middle div:nth-child(2),
+  #right,
+  #right div:first-child,
+  #right div:nth-child(2),
+  #right div:nth-child(2) div:first-child,
+  #right div:nth-child(2) div:nth-child(2)
+  {
+    flex-basis: auto;
+    
+  }
+
+  #right div:nth-child(2) {
+    flex-direction: column;
+  }
+
+  #left .fe,
+  #middle .fe,
+  #middle div:first-child .fe,
+  #middle div:nth-child(2) .fe,
+  #right .fe,
+  #right div:first-child .fe,
+  #right div:nth-child(2) .fe,
+  #right div:nth-child(2) div:first-child .fe,
+  #right div:nth-child(2) div:nth-child(2) .fe
+  {
+    opacity: 1;
+  }
+  
+  /*..HTML..*/
+  #left .fe p:first-child::after {
+    width: 56%;
+  }
+
+  /*..CSS.. */
+  #left .fe p:nth-child(2)::after {
+    width: 70%;
+  }
+
+  /*..HTML5..*/
+  #left .fe p:nth-child(3)::after {
+    width: 40%;
+  }
+
+  /*..JQUERY..*/
+  #left .fe p:nth-child(4)::after {
+    width: 50%;
+  }
+
+  /*..ANGULAR..*/
+  #left .fe p:nth-child(5)::after {
+    width: 65%;
+  }
+
+  /*..METOER..*/
+  #left .fe p:nth-child(6)::after {
+    width: 50%;
+  }
+
+  /*..RUBY ON RAILS..*/
+  #left .fe p:nth-child(7)::after {
+    width: 50%;
+  }
+  /*..FRONT END..*/
+  #middle div:first-child .fe p:first-child::after {
+    width: 59%;
+  }
+
+  /*..BACK END..*/
+  #middle div:first-child .fe p:nth-child(2)::after {
+    width: 50%;
+  }
+
+  /*..GIT..*/
+  #middle div:first-child .fe p:nth-child(3)::after {
+    width: 51%;
+    opacity: 1;
+  }
+
+  /*..SAURCE CONTROL..LOL..*/
+  #middle div:first-child .fe p:nth-child(4)::after {
+    width: 40%;
+  }
+  /*..PHP..*/
+  #middle div:nth-child(2) .fe p:first-child::after {
+    width: 60%;
+  }
+
+  /*..PYTHON..*/
+  #middle div:nth-child(2) .fe p:nth-child(2)::after {
+    width: 78%;
+  }
+
+  /*..NODE..*/
+  #middle div:nth-child(2) .fe p:nth-child(3)::after {
+    width: 40%;
+    opacity: 1;
+  }
+
+  /*..RUBY..*/
+  #middle div:nth-child(2) .fe p:nth-child(4)::after {
+    width: 48%;
+  }
+  /*..SQL..*/
+  #right div:first-child .fe p:first-child::after {
+    width: 56%;
+  }
+
+  /*..MYSQL..*/
+  #right div:first-child .fe p:nth-child(2)::after {
+    width: 70%;
+  }
+
+  /*..POSTGRES..*/
+  #right div:first-child .fe p:nth-child(3)::after {
+    width: 40%;
+    opacity: 1;
+  }
+
+  /*..SQLITE..*/
+  #right div:first-child .fe p:nth-child(4)::after {
+    width: 77%;
+  }
+
+  /*..MONGO..*/
+  #right div:first-child .fe p:nth-child(5)::after {
+    width: 20%;
+  }
+  /*..ASYNC..*/
+  #right div:nth-child(2) div:first-child .fe p:first-child::after {
+    width: 36%;
+  }
+
+  /*..OOP..*/
+  #right div:nth-child(2) div:first-child .fe p:nth-child(2)::after {
+    width: 65%;
+  }
+
+  /*..REGEEX..*/
+  #right div:nth-child(2) div:first-child .fe p:nth-child(3)::after {
+    width: 40%;
+    opacity: 1;
+  }
+
+  /*..DOM..*/
+  #right div:nth-child(2) div:first-child .fe p:nth-child(4)::after {
+    width: 86%;
+  }
+
+  /*..APIS..*/
+  #right div:nth-child(2) div:first-child .fe p:nth-child(5)::after {
+    width: 56%;
+  }
+
+  /*..WORD..*/
+  #right div:nth-child(2) div:nth-child(2) .fe p:first-child::after {
+    width: 50%;
+  }
+
+  /*..EXCEL..*/
+  #right div:nth-child(2) div:nth-child(2) .fe p:nth-child(2)::after {
+    width: 35%;
+  }
+
+  /*..SEO..*/
+  #right div:nth-child(2) div:nth-child(2) .fe p:nth-child(3)::after {
+    width: 30%;
+    opacity: 1;
+  }
+
+  /*..dynamic..*/
+  #right div:nth-child(2) div:nth-child(2) .fe p:nth-child(4)::after {
+    width: 50%;
+  }
+
+  /*..HTTP..*/
+  #right div:nth-child(2) div:nth-child(2) .fe p:nth-child(5)::after {
+    width: 45%;
+  }
+
+  /*..curl..*/
+  #right div:nth-child(2) div:nth-child(2) .fe p:nth-child(6)::after {
+    width: 10%;
+  }
+
+}
+
+@media(max-width:320px){
+  h1{
+    padding: 0;
+  }
+}

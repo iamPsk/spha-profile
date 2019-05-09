@@ -1,0 +1,347 @@
+/* .............main content........... */
+
+#main-content {
+  height: 100vmin;
+  background: url('../../../assets/images/ai-artificial-intelligence-code-34676.jpg') no-repeat center;
+  background-size: cover;
+  width: 100%;
+  position: relative;
+}
+
+/* ..........main layout........... */
+#main-layout {
+  height: 100%;
+  background: #011627b9;
+}
+
+/* .........Header................... */
+#header {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*............Nav-bar..................*/
+#nav-bar {
+  display: flex;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  transition: background-color 700ms ease;
+}
+
+#dd-nav {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+#dd-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+}
+
+#dd-nav ul li {
+  padding: 16px 8px;
+  transition: background-color 200ms ease, 200ms color ease;
+}
+
+#dd-nav ul li:last-child {
+  position: absolute;
+  right: 0px;
+  padding: 16px;
+}
+
+.anchor {
+  color: #FDFFFC;
+  font-weight: 500;
+  padding: 16px 8px;
+  transition: font-weight 100ms ease;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#nav-header {
+  flex-grow: 0.1;
+  padding: 11px 8px 8px 5px;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+li:hover,
+#nav-header:not(.active) a:hover {
+  background-color: #FF9F1C;
+}
+
+#nav-header button {
+  display: none;
+}
+
+.active {
+  background-color: #ee3d3d;
+}
+
+.active a {
+  color: rgb(255, 255, 255);
+}
+/* ..................................... */
+
+/*......... INTRODUCTION  .......*/
+.intro {
+  color: #fff;
+  align-self: center;
+  width: 75%;
+  position: relative;
+  background: #0000004f;
+  padding: 1em;
+  border-radius: 3px;
+  box-shadow: 0px 2px 5px 0px #00000080,
+    0px 2px 5px 0px #000000;
+}
+
+.intro h5 {
+  padding: 8px;
+  font-size: 2em;
+  font-weight: 300;
+  text-align: center;
+}
+
+#main-intro {
+  display: flex;
+  height: 65px;
+  position: relative;
+  align-items: baseline;
+  overflow: hidden;
+}
+
+#main-intro h2 {
+  font-size: 32px;
+  padding: 8px 0;
+  flex-shrink: 0;
+}
+
+#intro-cats {
+  position: absolute;
+  left: 85px;
+  font-size: 32px;
+  transition: position 30s ease;
+  animation: 13s infinite ease slideup;
+}
+
+#intro-cats h3 {
+  text-transform: uppercase;
+
+  padding: 8px;
+}
+
+#scroller{
+  font-size: xx-large;
+  background: #000000ab;
+  position: absolute;
+  bottom: 32px;
+  text-decoration: none;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  border: 8px solid #41ead477;
+  text-align: center;
+  color: #ffffffd0;
+  align-self: center;
+}
+
+#centered{
+  width: 80%;
+  margin: auto;
+  margin-right: 2em;
+}
+/* .................................. */
+
+/* .........slide up animation ....... */
+@keyframes slideup {
+  from {
+    top: -7.5%;
+  }
+  16.6% {
+    top: -110%;
+  }
+  33.2% {
+    top: -211%;
+  }
+  49.8% {
+    top: -314%;
+  }
+  64.4% {
+    top: -415%;
+  }
+  83% {
+    top: -516%;
+  }
+  100% {
+    top: -7.5%;
+  }
+}
+
+/* .........media query ...........*/
+/* ..........930px........ */
+@media(max-width:930px) {
+  #centered {
+    width: 100%;
+  }
+}
+
+@media(max-width:736px){
+  .intro{
+    width: 85%;
+  }
+}
+
+/* ..........600px........ */
+@media(max-width:600px) {
+  .active {
+    background: none;
+  }
+
+  #nav-bar {
+    flex-direction: column;
+  }
+
+  #nav-header {
+    padding: .1em;
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 16px;
+  }
+
+  #nav-header a {
+    padding: 0;
+    font-size: 20px;
+  }
+
+  #dd-nav {
+    flex-direction: column;
+    flex-basis: 100%;
+  }
+
+  #nav-header a:hover {
+    border-bottom: 1px solid rgb(255, 255, 255);
+    padding-bottom: 4px;
+    background: none;
+  }
+
+  #nav-header button {
+    display: initial;
+    color: #011627;
+    border: none;
+    border-radius: 2px;
+    background: #ee3d3d;
+  }
+
+  #nav-header button:hover {
+    background: #011627;
+    color: #ee3d3d;
+  }
+
+  #dd-nav ul {
+    background: #011627;
+    flex-basis: 100%;
+    position: initial;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #dd-nav ul li:last-child {
+    position: initial;
+    padding: 16px 8px;
+  }
+
+  .intro {
+    margin-top: 2em;
+    width: 100%;
+  }
+
+  #main-intro {
+    height: 80px;
+  }
+
+  #centered{
+    width: 100%;
+  }
+
+  #main-intro h2{
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+    background: #011627;
+    font-size: 22px;
+  }
+
+  #intro-cats{
+    text-align: center;
+    width: 100%;
+    left: 0;
+    margin-top: 1.5em;
+    font-size: 22px;
+  }
+
+  #scroller {
+    font-size: x-large;
+    bottom: 16px;
+    text-decoration: none;
+    border-width: 4px;
+    padding-top: 3px;
+  }
+
+  @keyframes slideup {
+    from {
+      top: 0%;
+    }
+
+    16.6% {
+      top: 0%;
+    }
+
+    33.2% {
+      top: -58%;
+    }
+
+    49.8% {
+      top: -123%;
+    }
+
+    64.4% {
+      top: -188%;
+    }
+
+    83% {
+      top: -250%;
+    }
+
+    100% {
+      top: -311%;
+    }
+  }
+}
+
+
+/* ..........400px........ */
+@media(max-width:400px){
+   #scroller {
+    font-size: large;
+    bottom: 2px;
+    border-width: 2px;
+    padding-top: 1.5px;
+   }
+}
+
+/* ..........320px........ */
+@media(max-width:320px){
+   #scroller {
+    display: none;
+   }
+}

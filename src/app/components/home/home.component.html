@@ -1,3 +1,50 @@
-<p>
-  fdfsfds
-</p>
+<div id="main-content">
+
+  <!-- main-layout -->
+  <div id="main-layout">
+
+    <!-- header -->
+    <header id="header">
+      <nav id="nav-bar">
+        <!-- nav header -->
+        <div class="active" id="nav-header">
+          <a class="anchor"  href="#main-content">Home</a>
+          <button (click)="toggleNav()"><span>
+              <i class="fa fa-bars"></i>
+            </span></button>
+        </div>
+
+        <!-- drop-down nav -->
+        <div id="dd-nav">
+          <ul>
+            <li><a class="anchor" href="#bt-sec">About Me</a></li>
+            <li><a class="anchor" href="#mySkills">Skills</a></li>
+            <li><a (click)="contactMe()" class="anchor" href="#contact">contact</a></li>
+            <!-- <li><a class="anchor"  href="#comment">leave a comment</a></li> -->
+          </ul>
+        </div>
+      </nav>
+      <!-- <div></div> -->
+      <div class="intro">
+        <h5>Hi my name is Siphamandla</h5>
+        <div id="centered">
+          <div id="main-intro">
+            <h2>I'M A</h2>
+            <div id="intro-cats">
+              <h3> Web Developer </h3>
+              <h3> Web Designer </h3>
+              <h3> Programmer </h3>
+              <h3> Full Stack Engineer </h3>
+              <h3>Front End Developer</h3>
+              <h3> Back End Developer</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#bt-sec" id="scroller">V</a>
+    </header>
+
+  </div>
+
+</div>
+<div id="bt-sec"></div>
