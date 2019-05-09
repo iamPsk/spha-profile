@@ -188,6 +188,18 @@ li:hover,
 }
 
 /* .........media query ...........*/
+/* ..........930px........ */
+@media(max-width:930px) {
+  #centered {
+    width: 100%;
+  }
+}
+
+@media(max-width:736px){
+  .intro{
+    width: 85%;
+  }
+}
 
 /* ..........600px........ */
 @media(max-width:600px) {
@@ -315,6 +327,7 @@ li:hover,
     }
   }
 }
+
 
 /* ..........400px........ */
 @media(max-width:400px){

@@ -2,7 +2,9 @@
   <div id="contactMe">
     <h3>new message <span (click)="close(form)">&times;</span></h3>
     <form #form="ngForm" (ngSubmit)="send(form)" action="#">
-
+      {{email.errors | json}}
+      {{email.valid}}
+      
       <!-- EMAIL -->
       <div class="input-group">
 
@@ -24,6 +26,8 @@
          #email="ngModel"
          autofocus
          tabindex="1"
+         pattern="/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}
+  [a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$.^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+/"
          >
 
       </div>
