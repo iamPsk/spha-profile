@@ -8,7 +8,7 @@ import { AboutComponent } from "./components/about/about.component";
 import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AboutComponent, ContactComponent],
+  declarations: [AppComponent, HomeComponent, AboutComponent, ContactComponent ],
   imports: [BrowserModule,FormsModule],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,8 @@
 footer{
-  background: #ee3d3d;
+  background: #1f1f1f;
   padding: 16px;
   padding-top: 2em;
-  color: #fff;
+  color: #fdfffc80;
 }
 
 nav{
@@ -16,7 +16,9 @@ nav{
 nav::after{
   content: '';
   width: 100%;
-  border-bottom: 1px solid #000;
+  border-top-width: thin;
+  border-top-style: solid;
+  border-top-color: #fdfffc80;
   margin-top: 0.5em;
 }
 
@@ -42,7 +44,7 @@ nav #anchors{
 
 /* footer nav-links hover and icons hover */
 #anchors a:hover, i:hover {
-  color: #011627;
+  color: #fdfffc;
 }
 
 /* contact links icons */
@@ -71,7 +73,7 @@ p,h4{
 }
 
 p a{
-  color: #fff;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -85,14 +87,20 @@ button{
   display: block;
   margin-left: auto;
   margin-right: .5em;
-  width: 50px;
-  height: 50px;
-  background: #011627;
-  border: 1px solid #011627;
-  border-radius: 50%;
+  background: unset;
+  border: unset;
+  transition: all 400ms ease;
+  -webkit-transition: all 400ms ease;
   color: #ee3d3d;
-  box-shadow: 0px 2px 5px rgb(48, 48, 48);
+  font-size: 2em;
+  outline: unset;
 }
+
+
+button:active{
+  margin-bottom: 1em;
+}
+
 #end{
   padding: 1px;
   background: #011627;

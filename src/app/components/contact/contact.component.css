@@ -7,10 +7,12 @@ section {
   height: 100%; 
   background: rgba(0, 0, 0, 0.3);
 }
-
 #contactMe{
+  -webkit-animation: ease 700ms fade;
   animation: ease 700ms fade;
   transition: 300ms flex-basis ease, 800ms opacity ease;
+  -webkit-transition: 300ms flex-basis ease,
+  800ms opacity ease;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   background: #fff;
@@ -18,18 +20,6 @@ section {
   flex-basis: 80%;  
   box-shadow: 0px 1px 8px #011627, 0px 4px 2px rgba(255, 255, 255, 0.459);
 }
-
-@keyframes fade{
-  from{
-    opacity: 0;
-    flex-basis: 0%;
-  }
-  70%{
-    flex-basis: 80%;
-  }
-
-}
-
 h3{
   font-weight: 400;
   border-bottom: 1px solid #011627;
@@ -42,58 +32,56 @@ h3{
   padding: 8px 16px;
   text-transform: capitalize;
 }
-
 span{
   font-weight: bold;
   color: #ee3d3d;
   font-size: 1.3em;
+  -webkit-transition: color 100ms ease,
+  background-color 100ms ease;
   transition: color 100ms ease,
   background-color 100ms ease;
   padding: 0px 5px 2px;
 }
-
 span:hover{
   background: rgba(0, 0, 0, 0.521);
   color: #ff0000;
   cursor: pointer;
 }
-
 form {
   padding: 8px 16px;
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-
 .input-group input, textarea{
   border: none;
 }
-
 .input-group input:focus, textarea:focus {
   outline: none;
 }
-
 .input-group input{
   width: 100%;
   border-bottom: 1px solid #ccc;
   font-size: 1em;
 }
-
 .input-group:first-child input{
   padding-bottom: 10px;
 }
-
 .input-group:nth-child(2) input{
   padding: 10px 0;
 }
-
 textarea{
   padding: 16px 0;
   height: 60vh;
   resize: none;
 }
-
-input[type='submit']{
+#controls{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#cancel, input[type='submit']{
+  font-family: inherit;
   font-weight: 400;
   max-width: 100px;
   padding: 10px;
@@ -105,21 +93,36 @@ input[type='submit']{
   border: 1px solid #011627;
   color: #fff;
   margin-bottom: .5em;
-  box-shadow: 0px 2px 8px #666;
-  transition:  opacity 500ms ;
-  opacity: 1;
+  -webkit-transition: opacity 500ms ;
+  transition: opacity 500ms ;
+  margin-right: 0.5em;
+  outline: unset;
 }
-input:e
-input[type="submit"]:active{
+#cancel{
+  color: #011627;
+  background: inherit;
+  border: 1px solid #ff9f1c;
+}
+#cancel:hover,
+input[type="submit"]:hover{
+  box-shadow: 0px 2px 8px #666;
+  
+}
+#cancel:active, input[type="submit"]:active{
   box-shadow: none;
 }
-input[type="submit"]:disabled{
-  opacity: 0;
-}
-
-
-/* for errors */
 .alert{
   color: #ee3d3d;
   padding: 8px 0;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    flex-basis: 0%;
+  }
+
+  70% {
+    flex-basis: 80%;
+  }
+
 }

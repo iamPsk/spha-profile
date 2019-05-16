@@ -1,10 +1,12 @@
-<section (click)="closer($event,form)" [style.top.px]="top" id="contact">
+<section  id="contact" [style.top.px]="top" (click)="cancel($event)">
   <div id="contactMe">
-    <h3>new message <span (click)="close(form)">&times;</span></h3>
-    <form #form="ngForm" (ngSubmit)="send(form)" action="#">
-      {{email.errors | json}}
-      {{email.valid}}
-      
+    <h3>new message 
+      <span (click)="cancel()">
+        &times;
+      </span>
+    </h3>
+    <form #form="ngForm" (ngSubmit)="send(form)" action="#">    
+
       <!-- EMAIL -->
       <div class="input-group">
 
@@ -15,21 +17,25 @@
               Your email address is required.
             </p>
           </div>
+          <div *ngIf="email.errors.pattern">
+            <p>
+              Please enter a valid email
+            </p>
+          </div>
         </div>
+
         <!-- recipients email address  -->
         <input type="email"
          name="email" 
          id="email" 
          placeholder="From"
-         required
          [(ngModel)]="message.from"
          #email="ngModel"
          autofocus
          tabindex="1"
-         pattern="/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}
-  [a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$.^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+/"
+         pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" 
+         required
          >
-
       </div>
 
       <!-- Subject -->
@@ -59,7 +65,8 @@
           </p>
         </div>
       </div>
-      <!-- Actuall message  -->
+
+      <!-- Actual message  -->
       <textarea name="message" 
       id="message" 
       cols="30" 
@@ -74,9 +81,12 @@
       </textarea>
 
       <!-- Send Message-->
-      <input type="submit" 
-      value="send" 
-      [disabled]="form.invalid ">
+      <div id="controls">
+        <button id="cancel" (click)="cancel()">Cancel</button>
+        <input type="submit" 
+        value="send" 
+        [disabled]="form.invalid ">
+      </div>
       
     </form>
   </div>

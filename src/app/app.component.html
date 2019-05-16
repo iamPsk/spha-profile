@@ -1,25 +1,18 @@
-<!-- Top -->
-<app-home (isContact)='contactMe($event)'></app-home>
+<app-home (contact)="contact($event)"></app-home>
 
 <!-- About Component -->
 <app-about></app-about>
 
 <!-- Contact Component -->
-<app-contact 
- [hidden]='!isContact'
- [top]='top' 
- (isContact)='contactMe($event)'
- >
-</app-contact>
+<app-contact (closeContact)="contact($event)"  [hidden]="!isContact"></app-contact>
 
 <!-- footer -->
 <footer>
-
   <nav>
     <!-- footer nav-links -->
     <div id="anchors">
-      <a href="#main-content">Home</a>
-      <a href="#bt-sec">About</a>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
       <a href="#skills">Skills</a>
     </div>
 
@@ -29,8 +22,13 @@
       <h4>Contact me</h4>
 
       <div id="icons">
-        <a ><i title="LinkedIn" class="fa fa-linkedin"></i></a>  
-        <a href="#" (click)="emailMe()"><i title="Gmail" class="fa fa-envelope"></i></a>  
+        <!-- linked in -->
+        <a href="https://www.linkedin.com/in/pskhonji" target="_blank"><i title="LinkedIn" class="fa fa-linkedin"></i></a>  
+
+        <!-- email -->
+        <a href="#" (click)="contact(true)"><i title="Gmail" class="fa fa-envelope"></i></a> 
+        
+        <!-- github -->
         <a href="https://www.github.com/iamPsk" target="_blank"><i title="Github" class="fa fa-github"></i></a>
       </div>
 
@@ -38,10 +36,10 @@
 
   </nav>
 
-  <p> &copy; 1999. All rights reserved | Designed by <a href="#">Siphamandla</a></p>
+  <p> &copy; 2019. All rights reserved | Designed by <a href="#">Siphamandla Khonjelwayo</a></p>
 
   <!-- to top page -->
-  <button (click)="takeMeHome()" >V</button>
+  <button (click)="takeMeHome()" ><i class="fa fa-chevron-up"></i></button>
 
 </footer>
 <div id="end"></div>

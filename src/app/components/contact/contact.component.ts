@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Messsage } from './message';
-import { EmailService } from '../email.service';
+import { AppService } from 'src/app/app.service';
 
 @Component({
   selector: "app-contact",
@@ -9,17 +9,29 @@ import { EmailService } from '../email.service';
 })
 export class ContactComponent implements OnInit {
 
-  @Input() top: number;
-  @Output() isContact: EventEmitter<boolean> = new EventEmitter();
+  @Output() closeContact: EventEmitter<boolean> = new EventEmitter;
 
   private message: Messsage;
   private recipient: string = 'khonjelwayo@gmail.com';
 
+  top: number;
+  form: HTMLFormElement;
+  
   constructor(
+
+    private app: AppService
     
   ) {}
 
   ngOnInit() {
+    
+    this.form = document.forms[0];
+
+    this.app.emitter(window, 'scroll').subscribe(
+      () => {
+        this.top = window.scrollY
+      }
+    )
 
     this.message = {
       from: '',
@@ -30,39 +42,34 @@ export class ContactComponent implements OnInit {
       priority: '',
       date: new Date()
     }
-
-    // this.gmail.gets()
-
   }
 
   // close contact state
   
-  close(form) {
-    form.reset()
-    this.isContact.emit(false);
-  }
-
-  // close contact state
-  closer(e,form) {
-    if (e.target.id === "contact") {
-      form.reset();
-      this.isContact.emit(false);
+  cancel(e?) {    
+    if (e) {
+      if (e.target.id == "contact") {
+        this.closeContact.emit(false);
+        document.body.style.overflow = "auto";
+      }
+    } else {
+      this.form.reset()
+      this.closeContact.emit(false);
+      document.body.style.overflow = "auto";
     }
   }
 
   //Send mail
-  send(form) {
-    const msg = this.message;
+  send() {
 
+    const msg = this.message;
     msg.to = this.recipient;
     msg.html = `<p>${this.message.text}</p>`;
     msg.priority = 'high';
     msg.date = new Date();
 
-    form.reset();
-
-    // close contact state 
-    this.isContact.emit(false);
-
+    this.form.reset();
   }
+
+  
 }
