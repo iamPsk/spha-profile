@@ -23,6 +23,7 @@
   background-color: #01162780;
   outline: none;
 }
+
 #main > button a{
   color: turquoise;
 }
@@ -393,4 +394,9 @@ nav a:hover,
     }
 
   }
+}
+
+#bout{
+  position: absolute;
+  bottom: 4em;
 }

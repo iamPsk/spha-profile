@@ -11,7 +11,7 @@ export class ContactComponent implements OnInit {
 
   @Output() closeContact: EventEmitter<boolean> = new EventEmitter;
 
-  private message: Messsage;
+  message: Messsage;
   private recipient: string = 'khonjelwayo@gmail.com';
 
   top: number;

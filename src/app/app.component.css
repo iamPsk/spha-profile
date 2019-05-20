@@ -91,11 +91,10 @@ button{
   border: unset;
   transition: all 400ms ease;
   -webkit-transition: all 400ms ease;
-  color: #ee3d3d;
+  color: #ca3a41;
   font-size: 2em;
   outline: unset;
 }
-
 
 button:active{
   margin-bottom: 1em;

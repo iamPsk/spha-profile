@@ -32,11 +32,8 @@ export class HomeComponent implements OnInit {
     })
     
     this.app.emitter(window,'scroll').subscribe(
-      () => {
-
-        // set current link for .active
-      this.curLink = window.location.hash
-
+      (e) => {
+      // set current link for .active
       if (window.scrollY > 100) {       
         this.scrolled = true;
       } else {
@@ -69,13 +66,15 @@ export class HomeComponent implements OnInit {
   }
 
   contactMe() {
-    this.contact.emit(!this.isContact);
+    this.isContact = true
 
-    if (!this.isContact) {
+    this.contact.emit(this.isContact);
+
+    this.isContact ? 
       document.body.style.overflow = "hidden"
-    } else {
+    :
       document.body.style.overflow = "auto"      
-    }
+    
   }
 
 }

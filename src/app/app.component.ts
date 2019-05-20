@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  isContact: boolean;
+  isContact: boolean = false;
   
   // scroll to top
   takeMeHome() {
@@ -15,7 +15,7 @@ export class AppComponent {
   }
 
   // init contact state
-  contact(val:boolean) {
-    this.isContact = val
+  contact(val: boolean) {
+    this.isContact = val  
   }
 }

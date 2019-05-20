@@ -3,10 +3,11 @@
   background: #fdfffc;
   color: #011627;
   font-family: "Railway";
-  padding-top: 5em;
+  padding-top: 4em;
   padding-left: .5em;
   padding-right: .5em;
   padding-bottom: 1em;
+  border-top: 16px solid #011627ed;
 }
 #about h1{
   color: inherit;
@@ -59,7 +60,8 @@
   content: '';
   position: absolute;
   top: 0;left: 0;bottom: 0;right: 0;
-  background: #00000080;
+  background: #fdfffc80;
+  border: 1px solid #fdfffc80;
 }
 #img >div::after{
   content: "";
@@ -86,12 +88,12 @@
 }
 #skills{
   font-family: "Railway";
-  border-bottom: 1px solid #011627;
+  border-bottom: 1px solid #01162780;
   letter-spacing: 2px;
   background: #011627;
   color: #fdfffc;
   font-size: 16px;
-  padding: 5em 1em 2em;
+  padding: 5em 1em;
 }
 #skills h1{
   font-size: 2em;
@@ -102,7 +104,7 @@
 #skills h2{
   font-weight: 300;
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 1.25em;
 }
 #my-skills{
   padding: 4px;
