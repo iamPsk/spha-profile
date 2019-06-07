@@ -17,7 +17,7 @@
 
 #main>button {
   left: 50%;
-  font-size: 16px;
+  font-size: 1.3em;
   padding: 12px;
   position: absolute;
   bottom: 1em;
@@ -78,7 +78,7 @@ nav {
 nav a {
   color: rgb(253, 255, 252);
   padding: 0 1em;
-  font-size: 1em;
+  font-size: 14.667px;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -102,7 +102,7 @@ nav a:hover,
  -webkit-transition: 500ms font-weight ease;
   transition: 500ms font-weight ease;
 
-  font-size: 16px;
+  font-size: 1.3em;
 }
 #nav-header > a i {
   -webkit-transition: all 200ms ease;
@@ -139,14 +139,7 @@ nav a:hover,
   -webkit-transition: all 200ms ease;
   transition: all 200ms ease;
 }
-/* #nav-header > button:hover {
-  border-color: rgb(253, 255, 252);
-  color: turquoise;
-}
-#nav-header > button:active {
-  border-color: #ff0000;
-  color: #000;
-} */
+
 #nav-header > button div {
   width: 20px;
   -webkit-transition: all 400ms linear;
@@ -182,13 +175,12 @@ nav a:hover,
 }
 .scrolled a {
   color: rgb(1, 22, 39);
-  font-size: 1em;
 }
 .scrolled #nav-header > a i {
   font-size: 1.6em;
   padding: 0.3em;
   margin: 0.3em 0;
-  box-shadow: 0 1px 0px #FF9F1C, 0 2px 5px black;
+  box-shadow: 0 1px 0px rgb(255, 159, 28), 0 2px 5px black;
 }
 .scrolled #nav-header > a:active i {
   color: rgb(204, 204, 204);

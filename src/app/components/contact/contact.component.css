@@ -6,6 +6,7 @@ section {
   width: 100%;
   height: 100%; 
   background: rgba(0, 0, 0, 0.3);
+  font-size: 1.25em;
 }
 #contactMe{
   -webkit-animation: ease 700ms fade;
@@ -15,26 +16,26 @@ section {
   800ms opacity ease;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  background: #fff;
+  background: rgb(255, 255, 255);
   align-self: center;
   flex-basis: 80%;  
-  box-shadow: 0px 1px 8px #011627, 0px 4px 2px rgba(255, 255, 255, 0.459);
+  box-shadow: 0px 1px 8px rgb(1, 22, 39), 0px 4px 2px rgba(255, 255, 255, 0.459);
 }
 h3{
   font-weight: 400;
-  border-bottom: 1px solid #011627;
-  background: #011627;
+  border-bottom: 1px solid rgb(1, 22, 39);
+  background: rgb(1, 22, 39);
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   display: flex;
   justify-content: space-between;
-  color: #f1f1f1;
+  color: rgb(241, 241, 241);
   padding: 8px 16px;
   text-transform: capitalize;
 }
 span{
   font-weight: bold;
-  color: #ee3d3d;
+  color: rgb(238, 61, 61);
   font-size: 1.3em;
   -webkit-transition: color 100ms ease,
   background-color 100ms ease;
@@ -44,7 +45,7 @@ span{
 }
 span:hover{
   background: rgba(0, 0, 0, 0.521);
-  color: #ff0000;
+  color: rgb(255, 0, 0);
   cursor: pointer;
 }
 form {
@@ -52,8 +53,10 @@ form {
   width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .input-group input, textarea{
+  font-family: inherit;
   border: none;
 }
 .input-group input:focus, textarea:focus {
@@ -61,7 +64,7 @@ form {
 }
 .input-group input{
   width: 100%;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid rgb(204, 204, 204);
   font-size: 1em;
 }
 .input-group:first-child input{
@@ -74,6 +77,7 @@ textarea{
   padding: 16px 0;
   height: 60vh;
   resize: none;
+  overflow: hidden;
 }
 #controls{
   display: flex;
@@ -89,9 +93,9 @@ textarea{
   text-transform: capitalize;
   text-align: center;
   font-size: 1em;
-  background: #011627;
-  border: 1px solid #011627;
-  color: #fff;
+  background: rgb(1, 22, 39);
+  border: 1px solid rgb(1, 22, 39);
+  color: rgb(255, 255, 255);
   margin-bottom: .5em;
   -webkit-transition: opacity 500ms ;
   transition: opacity 500ms ;
@@ -99,22 +103,24 @@ textarea{
   outline: unset;
 }
 #cancel{
-  color: #011627;
-  background: inherit;
-  border: 1px solid #ff9f1c;
+  color: rgb(1, 22, 39);
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 159, 28);
 }
 #cancel:hover,
 input[type="submit"]:hover{
-  box-shadow: 0px 2px 8px #666;
+  box-shadow: 0px 2px 8px rgb(102, 102, 102);
   
 }
 #cancel:active, input[type="submit"]:active{
   box-shadow: none;
 }
 .alert{
-  color: #ee3d3d;
+  color: rgb(238, 61, 61);
   padding: 8px 0;
 }
+
+
 @keyframes fade {
   from {
     opacity: 0;
@@ -125,4 +131,8 @@ input[type="submit"]:hover{
     flex-basis: 80%;
   }
 
+}
+
+#controls .spinner{
+  background: #000;
 }

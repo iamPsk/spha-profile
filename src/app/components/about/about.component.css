@@ -1,13 +1,13 @@
 /* .................aboout...... */
 #about{
-  background: #fdfffc;
-  color: #011627;
+  background: rgb(253, 255, 252);
+  color: rgb(1, 22, 39);
   font-family: "Railway";
   padding-top: 4em;
   padding-left: .5em;
   padding-right: .5em;
   padding-bottom: 1em;
-  border-top: 16px solid #011627ed;
+  border-top: 16px solid rgba(1, 22, 39, 0.929);
 }
 #about h1{
   color: inherit;
@@ -31,10 +31,11 @@
 .card{
   border-radius: 2px;
   border-width: thin;
-  border-color: #ccc;
+  border-color: rgb(204, 204, 204);
   border-style: solid;
   display: flex;
   flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
   margin-bottom: 1em;
 }
 #img{
@@ -51,24 +52,24 @@
   border-top-left-radius: 5px;
   position: relative;
   border-width: 1px;
-  border-color: #ccc;
+  border-color: rgb(204, 204, 204);
   border-style: inset;
   height: 250px;
-  box-shadow: 0 2px 10px #666;
+  box-shadow: 0 2px 10px rgb(102, 102, 102);
 }
 #img > div::before{
   content: '';
   position: absolute;
   top: 0;left: 0;bottom: 0;right: 0;
-  background: #fdfffc80;
-  border: 1px solid #fdfffc80;
+  background: rgba(253, 255, 252, 0.502);
+  border: 1px solid rgba(253, 255, 252, 0.502);
 }
 #img >div::after{
   content: "";
   position: absolute;
   bottom: 0;
   left: 15%;
-  box-shadow: 0 9px 20px #808080;
+  box-shadow: 0 9px 20px rgb(128, 128, 128);
   width: 75%;
   height: 100px;
    z-index: -1; 
@@ -88,10 +89,10 @@
 }
 #skills{
   font-family: "Railway";
-  border-bottom: 1px solid #01162780;
+  border-bottom: 1px solid rgba(1, 22, 39, 0.502);
   letter-spacing: 2px;
-  background: #011627;
-  color: #fdfffc;
+  background: rgb(1, 22, 39);
+  color: rgb(253, 255, 252);
   font-size: 16px;
   padding: 5em 1em;
 }
@@ -112,8 +113,8 @@
   flex-wrap: wrap;
 }
 .row{
-  flex: 33%;
-  max-width: 33.3%;
+  flex: 25%;
+  max-width: 25%;
   padding: 4px;
 }
 .row > div{
@@ -121,7 +122,7 @@
   position: relative;
   border-top-width: thin;
   border-top-style: solid;
-  border-color: #ffffff;
+  border-color: rgb(255, 255, 255);
   border-radius: 5px;
   box-shadow: 0 2px 5px rgb(0, 0, 0);
 }
@@ -133,7 +134,7 @@
   width: 75%;
   z-index: -1;
   height: 100px;
-  box-shadow: 0 5px 20px #000;
+  box-shadow: 0 5px 20px rgb(0, 0, 0);
 }
 .row > div img{
   border-radius: 5px;

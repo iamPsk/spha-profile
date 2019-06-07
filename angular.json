@@ -58,7 +58,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "spha-profile:build"
+            "browserTarget": "spha-profile:build",
+            "disableHostCheck": true
           },
           "configurations": {
             "production": {

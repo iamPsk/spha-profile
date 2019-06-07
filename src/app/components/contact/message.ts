@@ -1,9 +1,6 @@
-export interface Messsage{
-  from: string,
-  to: string,
-  subject: string,
+export interface NewMesssage{
+  from_add: string,
   text: string,
   html: string,
-  priority: string,
-  date: Date;
+  subject?: string
 }
