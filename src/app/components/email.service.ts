@@ -24,9 +24,9 @@ export class EmailService {
     
   }
 
-  sendEmail(url, data) {
-    return this.client.post(url,data)
-  }
+//   sendEmail(url, data) {
+//     return this.client.post(url,data)
+//   }
 
   public sendMail(message: NewMesssage) {
     return this.client.post<NewMesssage>(this.serverAdd, message, this.options).pipe(
