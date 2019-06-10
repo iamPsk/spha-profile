@@ -29,6 +29,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Running email server
 
-1 npm install 
-2 npm install nodemon
-3 npm start
+1. `npm install`
+2. `npm install nodemon`
+3. `npm start`
