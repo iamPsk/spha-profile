@@ -24,10 +24,6 @@ export class EmailService {
     
   }
 
-  sendEmail(url, data) {
-    return this.client.post(url,data)
-  }
-
   public sendMail(message: NewMesssage) {
     return this.client.post<NewMesssage>(this.serverAdd, message, this.postOpts).pipe(
       catchError(err => this.handleError(err))
