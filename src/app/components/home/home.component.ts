@@ -69,6 +69,9 @@ export class HomeComponent implements OnInit {
   contactMe() {
     this.isContact = true
 
+
+    console.log(`${this.isContact}, opening form`);
+
     this.contact.emit(this.isContact);
 
     this.isContact
