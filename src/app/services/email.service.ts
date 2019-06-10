@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http";
-import { NewMesssage } from "./contact/message";
+import { NewMesssage } from "../models/message";
 import { catchError } from "rxjs/operators";
 import { throwError } from "rxjs";
 
@@ -10,7 +10,7 @@ import { throwError } from "rxjs";
   
 export class EmailService { 
 
-  options = {
+  postOpts = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
@@ -29,7 +29,7 @@ export class EmailService {
   }
 
   public sendMail(message: NewMesssage) {
-    return this.client.post<NewMesssage>(this.serverAdd, message, this.options).pipe(
+    return this.client.post<NewMesssage>(this.serverAdd, message, this.postOpts).pipe(
       catchError(err => this.handleError(err))
     );
   }

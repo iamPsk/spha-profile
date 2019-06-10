@@ -6,7 +6,7 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./components/home/home.component";
 import { AboutComponent } from "./components/about/about.component";
 import { ContactComponent } from './components/contact/contact.component';
-import { EmailService } from './components/email.service';
+import { EmailService } from './services/email.service';
 import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({

@@ -1,7 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { NewMesssage } from './message';
-import { AppService } from 'src/app/app.service';
-import { EmailService } from "../email.service";
+import { NewMesssage } from '../../models/message';
+// import { AppService } from 'src/app/app.service';
+import { AppComponent } from "../../app.component";
+import { EmailService } from "../../services/email.service";
 
 @Component({
   selector: "app-contact",
@@ -19,7 +20,7 @@ export class ContactComponent implements OnInit {
   form: HTMLFormElement;
   
   constructor(
-    private app: AppService,
+    // private app: AppService,
     private messenger:EmailService
   ) {}
 
@@ -27,7 +28,7 @@ export class ContactComponent implements OnInit {
     
     this.form = document.forms[0];
 
-    this.app.emitter(window, 'scroll').subscribe(
+    new AppComponent().emitter(window, 'scroll').subscribe(
       () => {        
         this.top = window.pageYOffset
       }

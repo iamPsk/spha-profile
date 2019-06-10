@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Observable } from "rxjs";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,5 +20,22 @@ export class AppComponent {
   // init contact state
   contact(val: boolean) {
     this.isContact = val  
+  }
+
+  // observable event emmiter
+  public emitter(target, event) {
+
+    return new Observable((observer) => {
+
+      const handler = (e) => {
+        observer.next(e)
+      }
+
+      target.addEventListener(event, handler)
+
+      return () => {
+        target.removeEventListener(event, handler)
+      }
+    })
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { AppService } from 'src/app/app.service';
-import { ContactComponent } from '../contact/contact.component'
+import { AppComponent } from "../../app.component";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -11,46 +11,46 @@ export class HomeComponent implements OnInit {
 
   @Output() contact: EventEmitter<boolean> = new EventEmitter;
   isContact: boolean = false;
-  curLink: string = "#main";
-  scrolled: boolean;
-  collapse: HTMLElement;
+  curLink: string = "#main"; //for css .active
+  scrolled: boolean; // window has been scrolled
+  collapse: HTMLElement; //collapseable section on nav
   nav: HTMLElement;
 
 
-  constructor(
-   private app: AppService
-  ) { }
+  constructor() { }
 
   ngOnInit() {
 
-    this.collapse = document.getElementById("collapse")    
+    this.collapse = document.getElementById("collapse");
 
     this.nav = document.getElementsByTagName('nav')[0];
 
     // for css class active
-    this.app.activator(this.nav).subscribe((e:HTMLAnchorElement) => {
+    this.activator(this.nav).subscribe((e: HTMLAnchorElement) => {
       this.curLink = e.hash
-    })
+    });
     
-    // css class active activator
-    this.app.emitter(window,'scroll').subscribe(
+    // toggle this.scrolled class property
+    new AppComponent().emitter(window,'scroll').subscribe(
       (e) => {
-      if (window.pageYOffset > 100) {       
-        this.scrolled = true;
-      } else {
-        if (this.scrolled) {
-          delete this.scrolled
+        if (window.pageYOffset > 100) {       
+          this.scrolled = true;
+        } else {
+          if (this.scrolled) {
+            delete this.scrolled
+          }
         }
       }
-    })
+    )
     
-    this.app.emitter(window, 'resize').subscribe(() => {
-      if (window.innerWidth > 567) {
-        this.collapse.style.display = 'flex';
-      } else {
-        this.collapse.style.display = '';
+    // reset collapse style if window was resized
+    new AppComponent().emitter(window, 'resize').subscribe(
+      () => {
+        window.innerWidth > 567
+          ? this.collapse.style.display = 'flex'
+          : this.collapse.style.display = '';
       }
-    })
+    )
   }
 
   togCollapse() {
@@ -69,16 +69,34 @@ export class HomeComponent implements OnInit {
   contactMe() {
     this.isContact = true
 
-
-    console.log(`${this.isContact}, opening form`);
-
     this.contact.emit(this.isContact);
 
-    this.isContact ? 
-      document.body.style.overflowY = "hidden"
-    :
-      document.body.style.overflowY = "auto"
-    
+    this.isContact
+      ? document.body.style.overflowY = "hidden"
+      : document.body.style.overflowY = "auto";
   }
 
+  // toggle links for css .active
+  activator(target: HTMLElement) {
+    return new Observable((obvsever) => {
+
+      const handler = (e) => {
+        if (e.target.tagName == "I" || e.target.tagName == "A") {
+
+          if (e.target.tagName == 'I') {
+            obvsever.next(e.target.parentElement)
+          } else {
+            obvsever.next(e.target)
+          }
+        }
+      };
+
+      target.addEventListener('click', handler);
+
+      return () => {
+        target.removeEventListener('click', handler)
+      }
+
+    });
+  }
 }
