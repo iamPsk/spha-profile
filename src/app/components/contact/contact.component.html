@@ -1,11 +1,12 @@
 <section  id="contact" [style.top.px]="top" (click)="cancel($event)">
+
   <div id="contactMe">
     <h3>new message 
       <span (click)="cancel()">
         &times;
       </span>
     </h3>
-    <form #form="ngForm" (ngSubmit)="send()" action="#">    
+    <form #form="ngForm" action="#">    
 
       <!-- EMAIL -->
       <div class="input-group">
@@ -29,7 +30,7 @@
          name="email" 
          id="email" 
          placeholder="From"
-         [(ngModel)]="message.from"
+         [(ngModel)]="message.from_add"
          #email="ngModel"
          autofocus
          tabindex="1"
@@ -82,8 +83,10 @@
 
       <!-- Send Message-->
       <div id="controls">
+
         <button id="cancel" (click)="cancel()">Cancel</button>
-        <input type="submit" 
+
+        <input (click)="onSubmit()" class="spinner" type="submit" 
         value="send" 
         [disabled]="form.invalid ">
       </div>

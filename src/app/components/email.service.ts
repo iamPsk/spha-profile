@@ -1,32 +1,53 @@
 import { Injectable } from '@angular/core';
-import * as nodemailer from "nodemailer";
-
+import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http";
+import { NewMesssage } from "./contact/message";
+import { catchError } from "rxjs/operators";
+import { throwError } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
   
-export class EmailService {
+export class EmailService { 
 
-  private auth = {
-    user: 'user@gmail.com',
-    pass: 'Pass'
-  }
+  options = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
+
+  serverAdd: string = 'http://localhost:3000/mail';
   
-  private transpoter = nodemailer.createTransport(
-    {
-      host: 'smtp.gmail.com',
-      port: 467,
-      secure: true,
-      auth: this.auth
-    }
-  )
-
-  constructor() { 
+  constructor(
+    private client:HttpClient
+  ) { 
     
   }
 
-  public gets() {
-    console.log('til');
+  sendEmail(url, data) {
+    return this.client.post(url,data)
+  }
+
+  public sendMail(message: NewMesssage) {
+    return this.client.post<NewMesssage>(this.serverAdd, message, this.options).pipe(
+      catchError(err => this.handleError(err))
+    );
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error.message);
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong,
+      console.error(
+        `Backend returned code ${error.status}, ` +
+        `body was: ${error.error}`);
+    }
+    // return an observable with a user-facing error message
+    return throwError(
+      'Something bad happened; please try again later.');
+    
   }
 }

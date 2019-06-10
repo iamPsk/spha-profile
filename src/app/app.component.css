@@ -1,8 +1,8 @@
 footer{
-  background: #1f1f1f;
+  background: rgb(31, 31, 31);
   padding: 16px;
   padding-top: 2em;
-  color: #fdfffc80;
+  color: rgba(253, 255, 252, 0.502);
 }
 
 nav{
@@ -18,7 +18,7 @@ nav::after{
   width: 100%;
   border-top-width: thin;
   border-top-style: solid;
-  border-top-color: #fdfffc80;
+  border-top-color: rgba(253, 255, 252, 0.502);
   margin-top: 0.5em;
 }
 
@@ -44,7 +44,7 @@ nav #anchors{
 
 /* footer nav-links hover and icons hover */
 #anchors a:hover, i:hover {
-  color: #fdfffc;
+  color: rgb(253, 255, 252);
 }
 
 /* contact links icons */
@@ -56,7 +56,6 @@ nav #anchors{
 
 /* contact links icons a */
 #contactMe a{
-  /* padding: 8px; */
   color: inherit;
 }
 
@@ -87,13 +86,13 @@ button{
   display: block;
   margin-left: auto;
   margin-right: .5em;
-  background: unset;
-  border: unset;
+  background: none;
+  border: none;
   transition: all 400ms ease;
   -webkit-transition: all 400ms ease;
-  color: #ca3a41;
+  color: rgb(202, 58, 65);
   font-size: 2em;
-  outline: unset;
+  outline: none;
 }
 
 button:active{
@@ -102,5 +101,5 @@ button:active{
 
 #end{
   padding: 1px;
-  background: #011627;
+  background: rgb(1, 22, 39);
 }

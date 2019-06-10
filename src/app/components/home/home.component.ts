@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AppService } from 'src/app/app.service';
+import { ContactComponent } from '../contact/contact.component'
 
 @Component({
   selector: 'app-home',
@@ -28,13 +29,13 @@ export class HomeComponent implements OnInit {
 
     // for css class active
     this.app.activator(this.nav).subscribe((e:HTMLAnchorElement) => {
-      this.curLink = e.hash;
+      this.curLink = e.hash
     })
     
+    // css class active activator
     this.app.emitter(window,'scroll').subscribe(
       (e) => {
-      // set current link for .active
-      if (window.scrollY > 100) {       
+      if (window.pageYOffset > 100) {       
         this.scrolled = true;
       } else {
         if (this.scrolled) {
@@ -68,12 +69,15 @@ export class HomeComponent implements OnInit {
   contactMe() {
     this.isContact = true
 
+
+    console.log(`${this.isContact}, opening form`);
+
     this.contact.emit(this.isContact);
 
     this.isContact ? 
-      document.body.style.overflow = "hidden"
+      document.body.style.overflowY = "hidden"
     :
-      document.body.style.overflow = "auto"      
+      document.body.style.overflowY = "auto"
     
   }
 

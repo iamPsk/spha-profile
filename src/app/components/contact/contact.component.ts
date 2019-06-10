@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Messsage } from './message';
+import { NewMesssage } from './message';
 import { AppService } from 'src/app/app.service';
+import { EmailService } from "../email.service";
 
 @Component({
   selector: "app-contact",
@@ -11,16 +12,15 @@ export class ContactComponent implements OnInit {
 
   @Output() closeContact: EventEmitter<boolean> = new EventEmitter;
 
-  message: Messsage;
-  private recipient: string = 'khonjelwayo@gmail.com';
+  message: NewMesssage;
+  sending: boolean = false;
 
-  top: number;
+  top: number = 0; //pageYOffset
   form: HTMLFormElement;
   
   constructor(
-
-    private app: AppService
-    
+    private app: AppService,
+    private messenger:EmailService
   ) {}
 
   ngOnInit() {
@@ -28,48 +28,53 @@ export class ContactComponent implements OnInit {
     this.form = document.forms[0];
 
     this.app.emitter(window, 'scroll').subscribe(
-      () => {
-        this.top = window.scrollY
+      () => {        
+        this.top = window.pageYOffset
       }
     )
 
     this.message = {
-      from: '',
-      to: '',
-      subject: '',
-      text: '',
+      from_add: 'tdkhonji@gmail.com',
+      subject: 'learning phase 2',
+      text: 'hello testing',
       html: '',
-      priority: '',
-      date: new Date()
     }
   }
 
   // close contact state
   
-  cancel(e?) {    
+  cancel(e?) {
     if (e) {
-      if (e.target.id == "contact") {
+      if (e === "sending" || e.target.id == "contact") {
         this.closeContact.emit(false);
-        document.body.style.overflow = "auto";
+        document.body.style.overflowY = "auto";
       }
     } else {
       this.form.reset()
       this.closeContact.emit(false);
-      document.body.style.overflow = "auto";
+      document.body.style.overflowY = "auto";
     }
   }
 
-  //Send mail
-  send() {
 
-    const msg = this.message;
-    msg.to = this.recipient;
-    msg.html = `<p>${this.message.text}</p>`;
-    msg.priority = 'high';
-    msg.date = new Date();
+  onSubmit() {
 
-    this.form.reset();
+    this.sending = true;
+    this.cancel('sending');
+    // const msg = this.message;
+
+
+    this.message.html = `<p>${this.message.text}</p>`;
+    
+    this.messenger.sendMail(this.message).subscribe((res) => {
+      if (res) {
+        console.log('message sent');
+        console.log(res);
+        this.sending = false;
+        this.cancel();
+      } else {
+        console.log('oops, sumthing wrong happened');
+      }
+    })
   }
-
-  
 }

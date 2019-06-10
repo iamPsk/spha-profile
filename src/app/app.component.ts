@@ -8,7 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   
   isContact: boolean = false;
-  
+
+  constructor() {
+    document.body.style.overflowY = "auto"
+  }
   // scroll to top
   takeMeHome() {
     window.scrollTo(0, 0);
