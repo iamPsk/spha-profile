@@ -1,11 +1,7 @@
-# SphaProfile
+# Spha Profile
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
 
-# To download the project into your machine
-
-Run git clone
-Run npm install
 
 ## Development server
 
